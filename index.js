@@ -3,6 +3,14 @@ const app = express();
 const port = 3000||process.env.PORT
 
 
+
+app.get("/",async (req,res)=>{
+
+    res.send("This is Landing Page");
+
+});
+
+
 app.get("/all",async (req,res)=>{
     const userdata =[
         {
@@ -27,6 +35,18 @@ app.get("/all",async (req,res)=>{
             "Recovered":40,
             "Death":0,
             "Total_Case":34
+        },
+        {
+            "District":"Bhaktapur",
+            "Recovered":1270,
+            "Death":9,
+            "Total_Case":400
+        },
+        {
+            "District":"Dhulikhel",
+            "Recovered":0,
+            "Death":0,
+            "Total_Case":20
         }
     ]
     res.send(userdata)
